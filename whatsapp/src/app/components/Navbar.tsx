@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:12,borderBottom:'1px solid #eee'}}>
       <div style={{display:'flex',alignItems:'center',gap:12}}>
-        <Link href="/" style={{fontWeight:700}}>WhatsApp UI</Link>
+        <Link href="/" style={{fontWeight:700}}>Vibe</Link>
       </div>
 
       <div style={{display:'flex',alignItems:'center',gap:12}}>
