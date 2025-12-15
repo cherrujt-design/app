@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Chat app layout */
+.chat-app {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: 100vh;
+}
+.sidebar {
+  border-right: 1px solid #e6e6e6;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sidebar .account, .sidebar .contacts {
+  background: rgba(0,0,0,0.03);
+  padding: 10px;
+  border-radius: 8px;
+}
+.contacts-list { overflow:auto; }
+.contact-item {
+  padding: 8px;
+  border-radius: 6px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  cursor:pointer;
+}
+.contact-item:hover { background: rgba(0,0,0,0.04); }
+.contact-active { background: #e6f7ff; }
+.chat-pane { display:flex; flex-direction:column; height:100%; }
+.messages { flex:1; overflow:auto; padding:16px; display:flex; flex-direction:column; gap:8px; }
+.message { max-width:60%; padding:10px 12px; border-radius:12px; }
+.message.me { margin-left:auto; background:#dcf8c6; }
+.message.other { background:#fff; border:1px solid #eee; }
+.composer { display:flex; gap:8px; padding:12px; border-top:1px solid #eee; align-items:center; }
+.emoji-picker { position:absolute; bottom:72px; background:#fff; border:1px solid #ddd; padding:8px; border-radius:8px; display:flex; gap:6px; flex-wrap:wrap; width:260px; }
+.small { font-size:12px; color:#666; }
+
+@media (max-width:800px) {
+  .chat-app { grid-template-columns: 1fr; }
+  .sidebar { display:none; }
+}
