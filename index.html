@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>WhatsApp-like UI — Demo</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="app">
+		<aside class="sidebar">
+			<header class="sidebar-header">
+				<div class="brand">WhatsApp</div>
+			</header>
+			<div class="search">
+				<input placeholder="Search or start new chat" />
+			</div>
+			<ul class="chats">
+				<li class="chat active">
+					<div class="avatar">AL</div>
+					<div class="meta">
+						<div class="name">Alice</div>
+						<div class="last">Hey — want to catch up later?</div>
+					</div>
+					<div class="time">11:30</div>
+				</li>
+				<li class="chat">
+					<div class="avatar">BO</div>
+					<div class="meta">
+						<div class="name">Bob</div>
+						<div class="last">Sent a photo</div>
+					</div>
+					<div class="time">09:05</div>
+				</li>
+			</ul>
+		</aside>
+
+		<main class="chat-window">
+			<header class="chat-header">
+				<div class="left">
+					<div class="avatar">AL</div>
+					<div class="contact">Alice</div>
+				</div>
+				<div class="right">●</div>
+			</header>
+
+			<div class="messages" id="messages">
+				<div class="message received">Hi! This is a small WhatsApp-like UI demo.</div>
+				<div class="message sent">Nice — looks clean.</div>
+			</div>
+
+			<form class="composer" id="composer">
+				<input id="msg" autocomplete="off" placeholder="Type a message" />
+				<button type="submit">Send</button>
+			</form>
+		</main>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
